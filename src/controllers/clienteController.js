@@ -20,106 +20,138 @@ const clienteController = {
 
     },
 
-async buscarPorId(req, res) {
+    async buscarPorId(req, res) {
 
-    try {
+        try {
 
-        const { id } = req.params;
+            const { id } = req.params;
 
-        const cliente = await Cliente.buscarPorId(id);
+            const cliente = await Cliente.buscarPorId(id);
 
-        if (!cliente) {
+            if (!cliente) {
 
-            return res.status(404).json({
-                erro: 'Cliente não encontrado'
+                return res.status(404).json({
+                    erro: 'Cliente não encontrado'
+                });
+
+            }
+
+            res.json(cliente);
+
+        } catch (error) {
+
+            res.status(500).json({
+                erro: 'Erro ao buscar cliente'
             });
 
         }
 
-        res.json(cliente);
-
-    } catch (error) {
-
-        res.status(500).json({
-            erro: 'Erro ao buscar cliente'
-        });
-
-    }
-
-},
+    },
 
     async criar(req, res) {
 
-    try {
+        try {
 
-        const { nome, telefone, email } = req.body;
+            const { nome, telefone, email } = req.body;
 
-        if (!nome || !telefone || !email) {
+            // Validação de campos e verificação de e-mail existente
+            if (!nome || !telefone || !email) {
 
-            return res.status(400).json({
-                erro: 'Preencha todos os campos'
+                return res.status(400).json({
+                    erro: 'Preencha todos os campos'
+                });
+
+            }
+
+            const emailExistente = await Cliente.buscarPorEmail(email);
+
+            if (emailExistente) {
+
+                return res.status(409).json({
+                    erro: 'Email já cadastrado'
+                });
+
+            }
+
+            const cliente = await Cliente.criar(
+                nome,
+                telefone,
+                email
+            );
+
+            res.status(201).json(cliente);
+
+        } catch (error) {
+
+            res.status(500).json({
+                erro: 'Erro ao criar cliente'
             });
 
         }
 
-        const cliente = await Cliente.criar(
-            nome,
-            telefone,
-            email
-        );
-
-        res.status(201).json(cliente);
-
-    } catch (error) {
-
-        res.status(500).json({
-            erro: 'Erro ao criar cliente'
-        });
-
-    }
-
-},
+    },
 
     async atualizar(req, res) {
 
-    try {
+        try {
 
-        const { id } = req.params;
+            const { id } = req.params;
 
-        const { nome, telefone, email } = req.body;
+            const { nome, telefone, email } = req.body;
 
-        if (!nome || !telefone || !email) {
+            if (!nome || !telefone || !email) {
 
-            return res.status(400).json({
-                erro: 'Preencha todos os campos'
+                return res.status(400).json({
+                    erro: 'Preencha todos os campos'
+                });
+
+            }
+
+            // Verificação se o cliente existe antes de atualizar
+            const clienteExistente = await Cliente.buscarPorId(id);
+
+            if (!clienteExistente) {
+
+                return res.status(404).json({
+                    erro: 'Cliente não encontrado'
+                });
+
+            }
+
+            const clienteAtualizado = await Cliente.atualizar(
+                id,
+                nome,
+                telefone,
+                email
+            );
+
+            res.json(clienteAtualizado);
+
+        } catch (error) {
+
+            res.status(500).json({
+                erro: 'Erro ao atualizar cliente'
             });
 
         }
 
-        const clienteAtualizado = await Cliente.atualizar(
-            id,
-            nome,
-            telefone,
-            email
-        );
-
-        res.json(clienteAtualizado);
-
-    } catch (error) {
-
-        res.status(500).json({
-            erro: 'Erro ao atualizar cliente'
-        });
-
-    }
-
-},
+    },
 
     async deletar(req, res) {
 
         try {
 
             const { id } = req.params;
+
+            const clienteExistente = await Cliente.buscarPorId(id);
+
+            if (!clienteExistente) {
+
+                return res.status(404).json({
+                    erro: 'Cliente não encontrado'
+                });
+
+            }
 
             await Cliente.deletar(id);
 

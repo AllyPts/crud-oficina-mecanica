@@ -23,6 +23,17 @@ const Cliente = {
 
     },
 
+    async buscarPorEmail(email) {
+
+        const result = await db.query(
+            'SELECT * FROM clientes WHERE email = $1',
+            [email]
+        );
+
+        return result.rows[0];
+
+    },
+
     async atualizar(id, nome, telefone, email) {
 
         const result = await db.query(

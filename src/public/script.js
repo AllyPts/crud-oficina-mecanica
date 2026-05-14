@@ -1,67 +1,113 @@
-const form = document.getElementById('formCliente');
+// =======================
+// CLIENTES
+// =======================
 
-form.addEventListener('submit', async (e) => {
+const formCliente = document.getElementById('formCliente');
+
+formCliente.addEventListener('submit', async (e) => {
 
     e.preventDefault();
 
     const nome = document.getElementById('nome').value;
-
     const telefone = document.getElementById('telefone').value;
-
     const email = document.getElementById('email').value;
 
-    try {
+    await fetch('/clientes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nome, telefone, email })
+    });
 
-        await fetch('/clientes', {
-
-            method: 'POST',
-
-            headers: {
-                'Content-Type': 'application/json'
-            },
-
-            body: JSON.stringify({
-                nome,
-                telefone,
-                email
-            })
-
-        });
-
-        form.reset();
-
-        carregarClientes();
-
-    } catch (error) {
-
-        console.log(error);
-
-    }
+    formCliente.reset();
+    carregarVeiculos();
 
 });
 
-async function deletarCliente(id) {
+// =======================
+// VEÍCULOS
+// =======================
 
-    const confirmar = confirm('Deseja deletar este cliente?');
+const formVeiculo = document.getElementById('formVeiculo');
 
-    if (!confirmar) {
-        return;
-    }
+formVeiculo.addEventListener('submit', async (e) => {
 
-    try {
+    e.preventDefault();
 
-        await fetch(`/clientes/${id}`, {
-            method: 'DELETE'
-        });
+    const cliente_id = document.getElementById('cliente_id').value;
+    const modelo = document.getElementById('modelo').value;
+    const marca = document.getElementById('marca').value;
+    const placa = document.getElementById('placa').value;
+    const ano = document.getElementById('ano').value;
 
-        carregarClientes();
+    await fetch('/veiculos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            cliente_id,
+            modelo,
+            marca,
+            placa,
+            ano
+        })
+    });
 
-    } catch (error) {
+    formVeiculo.reset();
+    carregarVeiculos();
 
-        console.log(error);
+});
 
-    }
+// =======================
+// LISTAR VEÍCULOS (JOIN)
+// =======================
+
+async function carregarVeiculos() {
+
+    const res = await fetch('/veiculos');
+    const dados = await res.json();
+
+    const tabela = document.getElementById('listaVeiculos');
+
+    tabela.innerHTML = '';
+
+    dados.forEach(v => {
+
+        tabela.innerHTML += `
+            <tr>
+                <td>${v.id}</td>
+                <td>${v.cliente}</td>
+                <td>${v.modelo}</td>
+                <td>${v.marca}</td>
+                <td>${v.placa}</td>
+                <td>${v.ano}</td>
+                <td>
+                    <button onclick="deletarVeiculo(${v.id})" class="btn-deletar">
+                        Excluir
+                    </button>
+                </td>
+            </tr>
+        `;
+
+    });
 
 }
 
-carregarClientes();
+// =======================
+// DELETE VEÍCULO
+// =======================
+
+async function deletarVeiculo(id) {
+
+    const confirmar = confirm('Deseja deletar este veículo?');
+
+    if (!confirmar) return;
+
+    await fetch(`/veiculos/${id}`, {
+        method: 'DELETE'
+    });
+
+    carregarVeiculos();
+
+}
+
+// INIT
+carregarVeiculos();
