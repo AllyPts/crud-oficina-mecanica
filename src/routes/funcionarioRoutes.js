@@ -1,17 +1,13 @@
-const express = require('express');
+const express = require("express");
 
 const router = express.Router();
 
-const funcionarioController = require('../controllers/funcionarioController');
+const funcionarioController = require("../controllers/funcionarioController");
 
-router.get('/', funcionarioController.listar);
-
-router.get('/:id', funcionarioController.buscarPorId);
-
-router.post('/', funcionarioController.criar);
-
-router.put('/:id', funcionarioController.atualizar);
-
-router.delete('/:id', funcionarioController.deletar);
+router.get("/", funcionarioController.listar);
+router.get("/:id", funcionarioController.buscarPorId);
+router.post("/", funcionarioController.criar);
+router.put("/:id", funcionarioController.atualizar);
+router.delete("/:id", funcionarioController.deletar);
 
 module.exports = router;

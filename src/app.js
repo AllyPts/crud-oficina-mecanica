@@ -8,6 +8,8 @@ const veiculoRoutes = require('./routes/veiculoRoutes');
 
 const funcionarioRoutes = require('./routes/funcionarioRoutes');
 
+const ordemServicoRoutes = require('./routes/ordemServicoRoutes');
+
 const itemRoutes = require('./routes/itemRoutes');
 
 const app = express();
@@ -23,6 +25,8 @@ app.use('/clientes', clienteRoutes);
 app.use('/veiculos', veiculoRoutes);
 
 app.use('/funcionarios', funcionarioRoutes);
+
+app.use('/ordensServico', ordemServicoRoutes);
 
 app.use('/itens', itemRoutes);
 
