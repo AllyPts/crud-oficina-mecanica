@@ -2,6 +2,7 @@ const { Router } = require("express");
 const FuncionarioController = require("./controllers/FuncionarioController");
 const ClienteController = require("./controllers/ClienteController");
 const VeiculoController = require("./controllers/VeiculoController");
+const ItemController = require("./controllers/ItemController");
 
 const routes = Router();
 
@@ -26,5 +27,11 @@ routes.get('/veiculos', VeiculoController.listar);
 routes.get('/veiculos/:id', VeiculoController.buscarPorId);
 routes.put('/veiculos/:id', VeiculoController.atualizar);
 routes.delete('/veiculos/:id', VeiculoController.deletar);
+
+routes.post('/itens', ItemController.criar);
+routes.get('/itens', ItemController.listar);
+routes.get('/itens/:id', ItemController.buscarPorId);
+routes.put('/itens/:id', ItemController.atualizar);
+routes.delete('/itens/:id', ItemController.deletar);
 
 module.exports = routes;
