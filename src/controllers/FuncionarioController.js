@@ -10,15 +10,23 @@ class FuncionarioController {
       });
 
       if (funcionarioExistente) {
-        return res.status(400).json({ error: "Funcionário com este CPF já existe." });
+        return res
+          .status(400)
+          .json({ error: "Funcionário com este CPF já existe." });
       }
 
       if (!nome || !cpf || !telefone || !cargo || !salario) {
-        return res.status(400).json({ error: "Todos os campos são obrigatórios." });
+        return res
+          .status(400)
+          .json({ error: "Todos os campos são obrigatórios." });
       }
 
       const novoFuncionario = await Funcionario.create({
-        nome, cpf, telefone, cargo, salario,
+        nome,
+        cpf,
+        telefone,
+        cargo,
+        salario,
       });
 
       return res.status(201).json(novoFuncionario);
@@ -32,8 +40,8 @@ class FuncionarioController {
       const funcionarios = await Funcionario.findAll();
       return res.status(200).json(funcionarios);
     } catch (error) {
-        console.log(error);
-        return res.status(500).json({ error: "Erro ao listar funcionários." });
+      console.log(error);
+      return res.status(500).json({ error: "Erro ao listar funcionários." });
     }
   }
 
@@ -59,10 +67,12 @@ class FuncionarioController {
 
       await Funcionario.update(
         { nome, cpf, telefone, cargo, salario },
-        { where: { id } }
+        { where: { id } },
       );
 
-      return res.status(200).json({ message: "Funcionário atualizado com sucesso." });
+      return res
+        .status(200)
+        .json({ message: "Funcionário atualizado com sucesso." });
     } catch (error) {
       return res.status(500).json({ error: "Erro ao atualizar funcionário." });
     }
@@ -74,7 +84,9 @@ class FuncionarioController {
 
       await Funcionario.destroy({ where: { id } });
 
-      return res.status(200).json({ message: "Funcionário deletado com sucesso." });
+      return res
+        .status(200)
+        .json({ message: "Funcionário deletado com sucesso." });
     } catch (error) {
       return res.status(500).json({ error: "Erro ao deletar funcionário." });
     }
