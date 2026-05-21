@@ -2,7 +2,7 @@
 
 Projeto desenvolvido para a AV2 da disciplina de Backend.
 
-O sistema consiste em uma aplicação CRUD para gerenciamento de oficina mecânica, permitindo o controle de clientes, veículos, funcionários, serviços e ordens de serviço.
+O sistema consiste em uma aplicação CRUD para gerenciamento de oficina mecânica, permitindo o controle de clientes, veículos, funcionários, itens e ordens de serviço.
 
 ## Integrantes do projeto
 
@@ -14,27 +14,43 @@ O sistema consiste em uma aplicação CRUD para gerenciamento de oficina mecâni
 
 - Node.js
 - Express.js
+- Sequelize
 - PostgreSQL
-- DBeaver
-- Postman
+- Insomnia
 
 ## Funcionalidades
 
 - Cadastro de clientes
 - Cadastro de veículos
 - Controle de funcionários
-- Gerenciamento de serviços
+- Gerenciamento de itens e serviços
 - Controle de ordens de serviço
 - Integração com banco de dados PostgreSQL
 - API RESTful
 
 ## Estrutura do Projeto
 
-```bash
+```
 src/
 ├── config/
+│   └── database.js
 ├── controllers/
-├── routes/
+│   ├── ClienteController.js
+│   ├── FuncionarioController.js
+│   ├── ItemController.js
+│   ├── OrdemServicoController.js
+│   └── VeiculoController.js
+├── database/
+│   └── migrations/
 ├── models/
+│   ├── cliente.js
+│   ├── funcionario.js
+│   ├── index.js
+│   ├── item.js
+│   ├── ordemservico.js
+│   └── veiculo.js
+├── seeders/
 ├── app.js
+├── routes.js
 └── server.js
+```
