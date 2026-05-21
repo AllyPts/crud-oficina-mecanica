@@ -3,6 +3,7 @@ const FuncionarioController = require("./controllers/FuncionarioController");
 const ClienteController = require("./controllers/ClienteController");
 const VeiculoController = require("./controllers/VeiculoController");
 const ItemController = require("./controllers/ItemController");
+const OrdemServicoController = require("./controllers/OrdemServicoController");
 
 const routes = Router();
 
@@ -33,5 +34,11 @@ routes.get('/itens', ItemController.listar);
 routes.get('/itens/:id', ItemController.buscarPorId);
 routes.put('/itens/:id', ItemController.atualizar);
 routes.delete('/itens/:id', ItemController.deletar);
+
+routes.post('/ordens-servico', OrdemServicoController.criar);
+routes.get('/ordens-servico', OrdemServicoController.listar);
+routes.get('/ordens-servico/:id', OrdemServicoController.buscarPorId);
+routes.put('/ordens-servico/:id', OrdemServicoController.atualizar);
+routes.delete('/ordens-servico/:id', OrdemServicoController.deletar);
 
 module.exports = routes;
