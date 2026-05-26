@@ -13,6 +13,30 @@ async function carregarClientes() {
 }
 
 async function salvar() {
+  const nomeValido = /^[a-zA-ZÀ-ÿ\s]+$/.test(form.value.nome)
+  const telefoneValido = /^\d{10,11}$/.test(form.value.telefone)
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.value.email)
+
+  if (!form.value.nome || !form.value.telefone || !form.value.email) {
+    erro.value = 'Todos os campos são obrigatórios.'
+    return
+  }
+
+  if (!nomeValido) {
+    erro.value = 'Nome deve conter apenas letras.'
+    return
+  }
+
+  if (!telefoneValido) {
+    erro.value = 'Telefone deve conter 10 ou 11 números.'
+    return
+}
+
+  if (!emailValido) {
+    erro.value = 'Email inválido.'
+    return
+  }
+
   try {
     if (editandoId.value) {
       await atualizarCliente(editandoId.value, form.value)
