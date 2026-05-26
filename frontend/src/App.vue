@@ -1,11 +1,28 @@
 <script setup></script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <nav>
+    <RouterLink to="/clientes">Clientes</RouterLink>
+  </nav>
+
+  <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped>
+nav {
+  padding: 16px;
+  background-color: #1a1a2e;
+  display: flex;
+  gap: 16px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #e94560;
+}
+</style>
