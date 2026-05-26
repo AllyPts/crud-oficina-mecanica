@@ -3,6 +3,7 @@
 <template>
   <nav>
     <RouterLink to="/clientes">Clientes</RouterLink>
+    <RouterLink to="/veiculos">Veículos</RouterLink>
   </nav>
 
   <RouterView />
