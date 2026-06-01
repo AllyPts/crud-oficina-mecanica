@@ -6,6 +6,8 @@
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
 
 > **Projeto desenvolvido para a AV2 da disciplina de Backend.**
 
@@ -13,18 +15,26 @@ O **OficinaPro** é uma aplicação CRUD completa e escalável projetada para o 
 
 ---
 
-🛠️ Como Executar o Projeto
-Siga os passos abaixo para rodar a aplicação localmente:
+## 🚀 Como Executar o Projeto
 
-1. Clonar e Instalar
-Bash
+### 1. Clonar o Repositório
+
+```bash
 git clone https://github.com/AllyPts/crud-oficina-mecanica.git
 cd crud-oficina-mecanica
-npm install
-2. Configurar o Banco de Dados
-Crie um arquivo .env na raiz do projeto e preencha com as configurações abaixo:
+```
 
-Snippet de código
+### 2. Instalar Dependências do Back-end
+
+```bash
+npm install
+```
+
+### 3. Configurar Variáveis de Ambiente
+
+Crie um arquivo `.env` na raiz do projeto:
+
+```env
 DB_HOST=db.ogbenbueelrbbuxzcatz.supabase.co
 DB_USER=postgres
 DB_PASSWORD=Oficina@2026
@@ -32,22 +42,41 @@ DB_NAME=postgres
 DB_PORT=5432
 DB_DIALECT=postgres
 PORT=3333
-Após criar o arquivo, execute as migrações:
+```
 
-Bash
+### 4. Executar as Migrações
+
+```bash
 npx sequelize-cli db:migrate
-3. Iniciar o Back-end
-Bash
-npm run dev
-# A API estará rodando em http://localhost:3333
-4. Iniciar o Front-end
-Em um novo terminal, dentro da pasta do projeto:
+```
 
-Bash
+### 5. Iniciar o Back-end
+
+```bash
+npm run dev
+```
+
+A API estará disponível em:
+
+```text
+http://localhost:3333
+```
+
+### 6. Iniciar o Front-end
+
+Abra um novo terminal:
+
+```bash
 cd oficina-frontend
 npm install
 npm run dev
-# O Front-end estará disponível em http://localhost:5173
+```
+
+O sistema estará disponível em:
+
+```text
+http://localhost:5173
+```
 
 ---
 
@@ -55,13 +84,12 @@ npm run dev
 
 | Funcionalidade | Print da Interface | Dados no Supabase |
 | :--- | :---: | :---: |
-| **Dashboard** | ![Img1](crud-oficina-mecanica/assets/Dashboard.png) | |
-| **Clientes** | ![Img2](crud-oficina-mecanica/assets/Clientes.png) | ![Img3](crud-oficina-mecanica/assets/Clientes_sup.png) |
-| **Veículos** | ![Img4](crud-oficina-mecanica/assets/Veículos.png) | ![Img5](crud-oficina-mecanica/assets/Veículos_sup.png) |
-| **Funcionários** | ![Img6](crud-oficina-mecanica/assets/Funcionários.png) | ![Img7](crud-oficina-mecanica/assets/Funcionários_sup.png) |
-| **Peças/Serviços** | ![Img8](crud-oficina-mecanica/assets/Peças_Serviços.png) | ![Img9](crud-oficina-mecanica/assets/Peças_Serviços_sup.png) |
-| **Ordens de Serviço** | ![Img10](crud-oficina-mecanica/assets/Ordens_de_Serviço.png) | ![Img11](crud-oficina-mecanica/assets/Ordens_de_Serviço_sup.png) |
-
+| **Dashboard** | ![Dashboard](assets/Dashboard.png) | |
+| **Clientes** | ![Clientes](assets/Clientes.png) | ![Clientes Supabase](assets/Clientes_sup.png) |
+| **Veículos** | ![Veículos](assets/Veiculos.png) | ![Veículos Supabase](assets/Veiculos_sup.png) |
+| **Funcionários** | ![Funcionários](assets/Funcionarios.png) | ![Funcionários Supabase](assets/Funcionarios_sup.png) |
+| **Peças/Serviços** | ![Img8]| ![Peças e Serviços](assets/Pecas_Servicos.png) | ![Peças e Serviços Supabase](assets/Pecas_Servicos_sup.png) |
+| **Ordens de Serviço** | ![Ordens de Serviço](assets/Ordens_de_Servico.png) | ![Ordens de Serviço Supabase](assets/Ordens_de_Servico_sup.png) |
 ---
 
 ## ✨ Funcionalidades
