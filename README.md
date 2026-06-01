@@ -88,7 +88,7 @@ http://localhost:5173
 | **Clientes** | ![Clientes](assets/Clientes.png) | ![Clientes Supabase](assets/Clientes_sup.png) |
 | **Veículos** | ![Veículos](assets/Veículos.png) | ![Veículos Supabase](assets/Veículos_sup.png) |
 | **Funcionários** | ![Funcionários](assets/Funcionários.png) | ![Funcionários Supabase](assets/Funcionários_sup.png) |
-| **Peças/Serviços** | ![Img8]| ![Peças e Serviços](assets/Peças_Servicos.png) | ![Peças e Serviços Supabase](assets/Peças_Servicos_sup.png) |
+| **Peças/Serviços** | ![Img8]| ![Peças e Serviços](assets/Peças_Serviços.png) | ![Peças e Serviços Supabase](assets/Peças_Serviços_sup.png) |
 | **Ordens de Serviço** | ![Ordens de Serviço](assets/Ordens_de_Serviço.png) | ![Ordens de Serviço Supabase](assets/Ordens_de_Serviço_sup.png) |
 ---
 
