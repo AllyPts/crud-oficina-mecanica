@@ -139,6 +139,16 @@ O projeto foi desenvolvido utilizando as ferramentas mais modernas do mercado, s
 
 ---
 
+## 👨‍💻 Integrantes do Projeto
+
+Este software foi projetado e desenvolvido pelo time:
+
+- Allyson Allan Martins Pontes — Matrícula: 01854829  
+- Emilaine Bernardo da Silva — Matrícula: 01763693  
+- Marcelo Travassos Lima de Souza — Matrícula: 01818937  
+
+---
+
 ## 📂 Estrutura do Projeto
 
 O repositório está dividido em duas frentes principais (Monorepo), separando perfeitamente a lógica da API (Back-end) e a interface do usuário (Front-end):
@@ -170,14 +180,3 @@ O repositório está dividido em duas frentes principais (Monorepo), separando p
 ├── 📄 .env.example               # Exemplo de configuração de variáveis de ambiente
 ├── 📄 package.json               # Dependências do Back-end
 └── 📄 README.md                  # Documentação principal do projeto
-
----
-
-👨‍💻 Integrantes do Projeto
-Este software foi projetado e desenvolvido pelo time:
-
-Allyson Allan Martins Pontes - Matrícula: 01854829
-
-Emilaine Bernardo da Silva - Matrícula: 01763693
-
-Marcelo Travassos Lima de Souza - Matrícula: 01818937
