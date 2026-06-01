@@ -2,12 +2,65 @@
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 
 > **Projeto desenvolvido para a AV2 da disciplina de Backend.**
 
 O **OficinaPro** é uma aplicação CRUD completa e escalável projetada para o gerenciamento de ponta a ponta de uma oficina mecânica. O sistema moderniza o fluxo de trabalho, permitindo o controle preciso de clientes, frota de veículos, equipe técnica, estoque de peças/serviços e faturamento através de Ordens de Serviço (OS).
+
+---
+
+🛠️ Como Executar o Projeto
+Siga os passos abaixo para rodar a aplicação localmente:
+
+1. Clonar e Instalar
+Bash
+git clone https://github.com/AllyPts/crud-oficina-mecanica.git
+cd crud-oficina-mecanica
+npm install
+2. Configurar o Banco de Dados
+Crie um arquivo .env na raiz do projeto e preencha com as configurações abaixo:
+
+Snippet de código
+DB_HOST=db.ogbenbueelrbbuxzcatz.supabase.co
+DB_USER=postgres
+DB_PASSWORD=Oficina@2026
+DB_NAME=postgres
+DB_PORT=5432
+DB_DIALECT=postgres
+PORT=3333
+Após criar o arquivo, execute as migrações:
+
+Bash
+npx sequelize-cli db:migrate
+3. Iniciar o Back-end
+Bash
+npm run dev
+# A API estará rodando em http://localhost:3333
+4. Iniciar o Front-end
+Em um novo terminal, dentro da pasta do projeto:
+
+Bash
+cd oficina-frontend
+npm install
+npm run dev
+# O Front-end estará disponível em http://localhost:5173
+
+---
+
+## 🖼️ Demonstração do Sistema
+
+| Funcionalidade | Print da Interface | Dados no Supabase |
+| :--- | :---: | :---: |
+| **Dashboard** | ![Img1](crud-oficina-mecanica/assets/Dashboard.png) | |
+| **Clientes** | ![Img2](crud-oficina-mecanica/assets/Clientes.png) | ![Img3](crud-oficina-mecanica/assets/Clientes_sup.png) |
+| **Veículos** | ![Img4](crud-oficina-mecanica/assets/Veículos.png) | ![Img5](crud-oficina-mecanica/assets/Veículos_sup.png) |
+| **Funcionários** | ![Img6](crud-oficina-mecanica/assets/Funcionários.png) | ![Img7](crud-oficina-mecanica/assets/Funcionários_sup.png) |
+| **Peças/Serviços** | ![Img8](crud-oficina-mecanica/assets/Peças_Serviços.png) | ![Img9](crud-oficina-mecanica/assets/Peças_Serviços_sup.png) |
+| **Ordens de Serviço** | ![Img10](crud-oficina-mecanica/assets/Ordens_de_Serviço.png) | ![Img11](crud-oficina-mecanica/assets/Ordens_de_Serviço_sup.png) |
 
 ---
 
@@ -34,7 +87,7 @@ O projeto foi desenvolvido utilizando as ferramentas mais modernas do mercado, s
 * **[React](https://react.dev/):** Biblioteca JavaScript para construção de interfaces dinâmicas e reativas.
 * **[Vite](https://vitejs.dev/):** Build tool ultra-rápido utilizado para iniciar e empacotar o projeto React.
 * **[Tailwind CSS](https://tailwindcss.com/):** Framework de CSS utilitário para estilização rápida, responsiva e moderna direto no HTML.
-* **[Axios](https://axios-http.com/):** Cliente HTTP baseado em Promises para consumo da nossa API.
+* **[Axios](https://axios-http.com/):** Cliente HTTP baseado em Promises para consumo da nossa API.+
 * **[Phosphor Icons](https://phosphoricons.com/):** Biblioteca de ícones vetoriais consistentes e limpos.
 * **[React Router](https://reactrouter.com/):** Gerenciamento de rotas e navegação fluida (Single Page Application - SPA).
 
@@ -89,35 +142,8 @@ O repositório está dividido em duas frentes principais (Monorepo), separando p
 ├── 📄 .env.example               # Exemplo de configuração de variáveis de ambiente
 ├── 📄 package.json               # Dependências do Back-end
 └── 📄 README.md                  # Documentação principal do projeto
-🛠️ Como Executar o Projeto
-Siga os passos abaixo para rodar a aplicação localmente na sua máquina:
 
-1. Clone o repositório e instale as dependências do Back-end:
-
-Bash
-git clone [https://github.com/AllyPts/crud-oficina-mecanica.git](https://github.com/AllyPts/crud-oficina-mecanica.git)
-cd crud-oficina-mecanica
-npm install
-2. Configure o Banco de Dados:
-Crie um arquivo .env na raiz do projeto e configure as credenciais do seu banco de dados PostgreSQL (use o arquivo .env.example como base). Depois rode as migrations:
-
-Bash
-npx sequelize-cli db:create
-npx sequelize-cli db:migrate
-3. Inicie a API (Back-end):
-
-Bash
-npm run dev
-A API estará rodando em http://localhost:3333.
-
-4. Inicie a Interface (Front-end):
-Abra outro terminal na pasta do projeto e rode:
-
-Bash
-cd oficina-frontend
-npm install
-npm run dev
-O Front-end estará disponível no seu navegador, geralmente em http://localhost:5173.
+---
 
 👨‍💻 Integrantes do Projeto
 Este software foi projetado e desenvolvido pelo time:
