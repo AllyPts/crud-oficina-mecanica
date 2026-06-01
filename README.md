@@ -86,10 +86,10 @@ http://localhost:5173
 | :--- | :---: | :---: |
 | **Dashboard** | ![Dashboard](assets/Dashboard.png) | |
 | **Clientes** | ![Clientes](assets/Clientes.png) | ![Clientes Supabase](assets/Clientes_sup.png) |
-| **Veículos** | ![Veículos](assets/Veiculos.png) | ![Veículos Supabase](assets/Veiculos_sup.png) |
-| **Funcionários** | ![Funcionários](assets/Funcionarios.png) | ![Funcionários Supabase](assets/Funcionarios_sup.png) |
-| **Peças/Serviços** | ![Img8]| ![Peças e Serviços](assets/Pecas_Servicos.png) | ![Peças e Serviços Supabase](assets/Pecas_Servicos_sup.png) |
-| **Ordens de Serviço** | ![Ordens de Serviço](assets/Ordens_de_Servico.png) | ![Ordens de Serviço Supabase](assets/Ordens_de_Servico_sup.png) |
+| **Veículos** | ![Veículos](assets/Veículos.png) | ![Veículos Supabase](assets/Veículos_sup.png) |
+| **Funcionários** | ![Funcionários](assets/Funcionários.png) | ![Funcionários Supabase](assets/Funcionários_sup.png) |
+| **Peças/Serviços** | ![Img8]| ![Peças e Serviços](assets/Peças_Servicos.png) | ![Peças e Serviços Supabase](assets/Peças_Servicos_sup.png) |
+| **Ordens de Serviço** | ![Ordens de Serviço](assets/Ordens_de_Serviço.png) | ![Ordens de Serviço Supabase](assets/Ordens_de_Serviço_sup.png) |
 ---
 
 ## ✨ Funcionalidades
